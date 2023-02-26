@@ -94,12 +94,8 @@ if os.environ.get('DB_ENGINE') and os.environ.get('DB_ENGINE') == "mysql":
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'dbtest',
-            'USER': 'postgres',
-            'PASSWORD': 'superuser',
-            'HOST': 'localhost',
-            'PORT': '5433'
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
         }
     }
 
