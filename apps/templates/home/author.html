@@ -57,6 +57,11 @@
                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                   </a>
                 </p>
+                <ul class="html">
+                {% for iteratorname in tools|dictsort:"project_name" %}
+                <li><a href="{{ iteratorname.project_url }}">{{ iteratorname.project_name }}</a></li>
+                {% endfor %}
+                </ul>
               </div>
             </div>
           </div>

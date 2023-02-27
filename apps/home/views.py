@@ -9,18 +9,31 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 
+from .models import Tool
+
+from django.shortcuts import render
+
+
+
+
+
 
 @login_required(login_url="/login/")
 def index(request):
     context = {'segment': 'index'}
 
+    #data = Tool.objects.all().order_by('?')
+
+    context['tools'] = Tool.objects.all().order_by('?')
+
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
 
+
 @login_required(login_url="/login/")
 def pages(request):
-    context = {}
+    context = {'tools': Tool.objects.all()}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
@@ -31,8 +44,10 @@ def pages(request):
             return HttpResponseRedirect(reverse('admin:index'))
         context['segment'] = load_template
 
+
         html_template = loader.get_template('home/' + load_template)
         return HttpResponse(html_template.render(context, request))
+
 
     except template.TemplateDoesNotExist:
 
@@ -42,3 +57,13 @@ def pages(request):
     except:
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
+
+
+
+
+
+
+
+
+
+
