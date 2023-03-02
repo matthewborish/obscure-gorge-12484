@@ -22,8 +22,6 @@ from django.shortcuts import render
 def index(request):
     context = {'segment': 'index'}
 
-    #data = Tool.objects.all().order_by('?')
-
     context['tools'] = Tool.objects.all().order_by('?')
 
     html_template = loader.get_template('home/index.html')

@@ -83,7 +83,9 @@
               <p >Check the possible ways of working with AI.</p>
                 <ul>
                 {% for iteratorname in tools|dictsort:"project_name" %}
+                  {% if iteratorname.category  == 'productivity' %}
                 <li><a href="{{ iteratorname.project_url }}">{{ iteratorname.project_name }}</a></li>
+                  {% endif %}
                 {% endfor %}
                 </ul>
               <a href="" class="text-primary icon-move-right">
@@ -97,14 +99,17 @@
           <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4 h-100">
             <i class="material-icons text-gradient text-primary text-3xl">precision_manufacturing</i>
             <div class="ps-0 ps-md-3 mt-3 mt-md-0">
-              <h5>Art AI</h5>
-              <p>Get inspiration!</p>
-              <ul class="html">
-              <li><a href=""></a>Sample AI A</li>
-              <li><a href=""></a>Sample AI B</li>
-              </ul>
-              <a href="https://www.creative-tim.com/learning-lab/bootstrap/datepicker/material-kit" class="text-primary icon-move-right">
-                Read more
+              <h5 >Art AI</h5>
+              <p >Get inspired working with AI!</p>
+                <ul>
+                {% for iteratorname in tools|dictsort:"project_name" %}
+                  {% if iteratorname.category  == 'art' %}
+                <li><a href="{{ iteratorname.project_url }}">{{ iteratorname.project_name }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              <a href="" class="text-primary icon-move-right">
+                Let's start
                 <i class="fas fa-arrow-right text-sm ms-1"></i>
               </a>
             </div>
@@ -114,14 +119,17 @@
           <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4">
             <i class="material-icons text-gradient text-primary text-3xl">receipt_long</i>
             <div class="ps-0 ps-md-3 mt-3 mt-md-0">
-              <h5>Analytics AI</h5>
-              <p>Crunch data with AI!</p>
-              <ul class="html">
-              <li><a href=""></a>Sample AI A</li>
-              <li><a href=""></a>Sample AI B</li>
-              </ul>
-              <a href="https://www.creative-tim.com/learning-lab/bootstrap/utilities/material-kit" class="text-primary icon-move-right">
-                Read more
+              <h5 >Analytics AI</h5>
+              <p >Crunch numbers with AI!</p>
+                <ul>
+                {% for iteratorname in tools|dictsort:"project_name" %}
+                  {% if iteratorname.category  == 'analytics' %}
+                <li><a href="{{ iteratorname.project_url }}">{{ iteratorname.project_name }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              <a href="" class="text-primary icon-move-right">
+                Let's start
                 <i class="fas fa-arrow-right text-sm ms-1"></i>
               </a>
             </div>

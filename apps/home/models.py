@@ -13,6 +13,7 @@ class Tool(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField(max_length=10000)
     date_posted = models.DateTimeField(default=timezone.now)
+    category = models.CharField(max_length=100)
 
     class Meta:
         verbose_name_plural = "Tools"
